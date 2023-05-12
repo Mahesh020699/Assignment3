@@ -82,6 +82,8 @@ def clustering_dataset():
     plt.savefig("Clustering_dataset.png", dpi=300)
     plt.show()
 
+ #df_gdp, df_gdp_trans = read_file("gdp_.csv")
+ #df_population, df_population_trans = read_file("population_.csv")    
 
 
 def read_file(file_name):
@@ -132,10 +134,6 @@ def read_file(file_name):
 
     return data_frame, transposed_df
 
-
-
-df_gdp, df_gdp_trans = read_file("gdp_.csv")
-df_population, df_population_trans = read_file("population_.csv")
 
 def curve_fun(t, scale, growth):
     """
@@ -243,13 +241,18 @@ def plot_prediction(dframe, country, indicator, title):
     plt.savefig("GDP_prediction.png", dpi=300)
     plt.show()
 
+if __name__ == "__main__":
 
-clustering_dataset()
-
-#plotting the plots and prediction plots for gdp dataframe
-plot_fit(df_gdp_trans , "Ireland", "GDP", "GDP of Ireland")
-plot_prediction(df_gdp_trans , "Ireland", "GDP", "GDP Prediction for 2060-Ireland")
-
-#plotting the plots and prediction plots for population dataframe
-plot_fit(df_population_trans, "Ireland", "population", "Population Growth of Ireland")
-plot_prediction(df_population_trans , "Ireland", "population", "Population Growth prediction for 2060-Ireland")
+    
+    df_gdp, df_gdp_trans = read_file("gdp_.csv")
+    df_population, df_population_trans = read_file("population_.csv")
+    
+    clustering_dataset()
+    
+    #plotting the plots and prediction plots for gdp dataframe
+    plot_fit(df_gdp_trans , "Ireland", "GDP", "GDP of Ireland")
+    plot_prediction(df_gdp_trans , "Ireland", "GDP", "GDP Prediction for 2060-Ireland")
+    
+    #plotting the plots and prediction plots for population dataframe
+    plot_fit(df_population_trans, "Ireland", "population", "Population Growth of Ireland")
+    plot_prediction(df_population_trans , "Ireland", "population", "Population Growth prediction for 2060-Ireland")
