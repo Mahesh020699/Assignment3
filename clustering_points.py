@@ -133,10 +133,6 @@ def read_file(file_name):
     return data_frame, transposed_df
 
 
-
-#df_gdp, df_gdp_trans = read_file("gdp_.csv")
-#df_population, df_population_trans = read_file("population_.csv")
-
 def curve_fun(t, scale, growth):
     """
     Calculate a curve based on a list of values with a specified scale and growth rate.
